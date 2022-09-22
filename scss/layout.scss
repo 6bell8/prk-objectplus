@@ -1,0 +1,167 @@
+@import "vars";
+@import "mixin";
+* {
+  box-sizing: border-box;
+}
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+body {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  word-break: keep-all;
+}
+
+#button {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  opacity: 1;
+  .chatBtn {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    z-index: 999;
+    .material-icons {
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      text-align: center;
+      font-weight: 300;
+    }
+    .chat {
+      border: 1px solid #fff;
+      background-color: #000;
+      color: #fff;
+      margin-bottom: 10px;
+      &:hover {
+        background-color: #fff;
+        color: #000;
+        border: 2px solid #000;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  z-index: 99;
+  background-color: none;
+  #logo {
+    position: absolute;
+    left: 50px;
+    a {
+      display: block;
+      padding: 30px 0;
+      img {
+        position: absolute;
+        height: 30px;
+        transition: all 0.25s ease;
+      }
+    }
+  }
+  #gnb {
+    color: #000;
+    transition: all 0.25s ease;
+
+    ul {
+      display: flex;
+      transform: translateX(200px);
+      li {
+        a {
+          font-size: clamp(12px, 2.5vw, 18px);
+          font-weight: 700;
+          padding: 0 30px;
+          display: flex;
+          height: 100px;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+        }
+      }
+    }
+  }
+  .myPage {
+    ul {
+      display: flex;
+      position: absolute;
+      right: 30px;
+      top: 40px;
+      font-weight: 500;
+      color: #000;
+      li {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+#footer {
+  position: relative;
+  padding: 50px 40px;
+  h2 {
+    overflow: hidden;
+    color: #000;
+    font-family: "Roboto";
+    font-size: clamp(18px, 4.5vw, 24px);
+    font-weight: 700;
+  }
+  .info {
+    overflow: hidden;
+    margin: 38px 0 0;
+    ul {
+      li {
+        display: inline-block;
+        margin-right: 22px;
+        font-size: 12px;
+        margin-bottom: 15px;
+      }
+    }
+    .copy {
+      font-size: 11px;
+      line-height: 30px;
+    }
+  }
+}
+
+@media all and (max-width: 960px) {
+  #header {
+    #gnb {
+      ul {
+        li {
+          a {
+            padding: 0 15px;
+            display: flex;
+            height: 100px;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 720px) {
+  #header {
+    #gnb {
+      ul {
+        display: none;
+        a {
+        }
+      }
+    }
+  }
+}
